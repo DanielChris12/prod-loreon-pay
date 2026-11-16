@@ -152,12 +152,3 @@ resource "aws_eks_node_group" "main" {
   ]
 }
 
-resource "aws_s3_bucket" "application_storage" {
-  bucket = "${var.project_name}-${var.environment}-storage"
-
-  tags = {
-    Name        = "${var.project_name}-storage"
-    Environment = var.environment
-    ManagedBy   = "Terraform"
-  }
-}
